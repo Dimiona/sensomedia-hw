@@ -4,6 +4,8 @@
     "module": "NodeNext",
     "strict": true,
     "verbatimModuleSyntax": true,
+    "allowImportingTsExtensions": true,
+    "noEmit": true,
     "skipLibCheck": true,
     "types": [
       "node"
@@ -12,5 +14,8 @@
     "jsxImportSource": "hono/jsx",
     "outDir": "./dist"
   },
+  "references": [
+    { "path": "../../packages/shared" }
+  ],
   "exclude": ["node_modules"]
 }
