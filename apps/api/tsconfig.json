@@ -14,8 +14,9 @@
     "jsxImportSource": "hono/jsx",
     "outDir": "./dist"
   },
-  "references": [
-    { "path": "../../packages/shared" }
-  ],
+  "paths": {
+    "@repo/shared/schemas": ["../../packages/shared/src/schemas/index.ts"],
+    "@repo/shared/schemas/*": ["../../packages/shared/src/schemas/*.ts"]
+  },
   "exclude": ["node_modules"]
 }
