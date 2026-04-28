@@ -4,6 +4,7 @@ import { eventCreateSchema, eventResponseSchema } from "@repo/shared/schemas/eve
 import { ObjectId } from "mongodb";
 import z from "zod";
 import { objectIdValidator } from "../validators/objectIdValidator.ts";
+import { invalidSchemaResponse, successResponse } from "../utility/httpResponse.ts";
 
 const event = new Hono();
 
@@ -19,12 +20,12 @@ event.post(
 
     const event = await eventService.createEvent(parsedEvent.data);
 
-    const parsedResponse = eventResponseSchema.safeParse(event);
+    const parsedResponse = eventResponseSchema.safeParse(event.data);
     if (!parsedResponse.success) {
-      return c.json({ error: `Invalid response schema: ${z.treeifyError(parsedResponse.error).errors.join('\n')}` }, 500);
+      return invalidSchemaResponse(c, "response", parsedResponse.error);
     }
 
-    return c.json(parsedResponse.data);
+    return successResponse(c, parsedResponse.data);
   }
 );
 
@@ -36,12 +37,12 @@ event.get(
 
     const event = await eventService.getEvent(new ObjectId(id));
 
-    const parsedResponse = eventResponseSchema.safeParse(event);
+    const parsedResponse = eventResponseSchema.safeParse(event.data);
     if (!parsedResponse.success) {
-      return c.json({ error: `Invalid response schema: ${z.treeifyError(parsedResponse.error).errors.join('\n')}` }, 500);
+      return invalidSchemaResponse(c, "response", parsedResponse.error);
     }
 
-    return c.json(parsedResponse.data);
+    return successResponse(c, parsedResponse.data);
   }
 );
 
@@ -54,17 +55,17 @@ event.put(
     const body = await c.req.json();
     const parsedEvent = eventCreateSchema.safeParse(body);
     if (!parsedEvent.success) {
-      return c.json({ error: `Invalid event schema: ${z.treeifyError(parsedEvent.error).errors.join('\n')}` }, 500);
+      return invalidSchemaResponse(c, "event", parsedEvent.error);
     }
 
     const event = await eventService.updateEvent(new ObjectId(id), parsedEvent.data);
 
-    const parsedResponse = eventResponseSchema.safeParse(event);
+    const parsedResponse = eventResponseSchema.safeParse(event.data);
     if (!parsedResponse.success) {
-      return c.json({ error: `Invalid response schema: ${z.treeifyError(parsedResponse.error).errors.join('\n')}` }, 500);
+      return invalidSchemaResponse(c, "response", parsedResponse.error);
     }
 
-    return c.json(parsedResponse.data);
+    return successResponse(c, parsedResponse.data);
   }
 );
 
@@ -81,10 +82,10 @@ event.delete(
 
     const parsedResponse = eventResponseSchema.safeParse(data);
     if (!parsedResponse.success) {
-      return c.json({ error: `Invalid response schema: ${z.treeifyError(parsedResponse.error).errors.join('\n')}` }, 500);
+      return invalidSchemaResponse(c, "response", parsedResponse.error);
     }
 
-    return c.json(parsedResponse.data);
+    return successResponse(c, parsedResponse.data);
   }
 );
 
