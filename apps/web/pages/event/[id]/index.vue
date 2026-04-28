@@ -1,17 +1,20 @@
 <script setup lang="ts">
 import type { TEventResponseSchema } from '@repo/shared/types/event.d';
+import { formatDate } from '~/utility/date';
 
-const route = useRoute();
+const router = useRouter();
 const toast = useToast();
 
 const event = ref<TEventResponseSchema | null>(null);
 const isLoading = ref<boolean>(false);
 
+const goBack = () => router.back();
+
 const fetch = async () => {
   isLoading.value = true;
 
   try {
-    const response = await useApiService().event.get(route.params.id as string);
+    const response = await useApiService().event.get(router.currentRoute.value.params.id as string);
     if (!(response instanceof Error)) {
       event.value = response.payload as TEventResponseSchema;
     }
@@ -30,7 +33,7 @@ const fetch = async () => {
         color: 'error',
       });
 
-      // navigateTo('/');
+      navigateTo('/');
     }
   }
   catch (e: unknown) {
@@ -48,10 +51,10 @@ const fetch = async () => {
       color: 'error',
     });
 
-    // navigateTo('/');
+    navigateTo('/');
   }
   finally {
-    // isLoading.value = false;
+    isLoading.value = false;
   }
 };
 
@@ -62,8 +65,31 @@ await fetch();
   <div>
     <PageTitle title="Esemény oldal" />
 
-    <article v-if="!isLoading && event !== null">
-      <h2 class="text-2xl font-medium">{{ event?.title }}</h2>
+    <UButton
+      class="hover:cursor-pointer mb-5"
+      icon="i-lucide-chevron-left"
+      label="Vissza"
+      @click="goBack()"
+    />
+
+    <article
+      v-if="!isLoading && event !== null"
+      class="flex flex-col gap-8"
+    >
+      <h2 class="text-2xl font-medium">{{ event!.title }}</h2>
+
+      <div class="flex flex-col gap-1">
+        <label class="text-md font-bold">Esemény leírása:</label>
+        <p>{{ event!.description ?? 'Nem tartozik leírás az eseményhez.' }}</p>
+      </div>
+
+      <EventInfoRow label="Időpont">
+        <time :datetime="(new Date(event.date)).toUTCString()">{{ formatDate(event.date, 'Y-m-d H:i') }}</time>
+      </EventInfoRow>
+
+      <EventInfoRow label="Férőhely">
+        <span>{{ event.capacity }}</span>
+      </EventInfoRow>
     </article>
 
     <!-- Spinner-t nem találtam a Nuxt UI-ban -->

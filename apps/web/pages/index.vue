@@ -84,15 +84,13 @@ await fetch();
         <div class="flex flex-col gap-3">
           <p class="text-sm font-medium leading-7">{{ event.description ? (event.description.length > 500 ? (event.description.substring(0, 500) + '..') : event.description) : '' }}</p>
 
-          <div class="flex items-center gap-1 text-sm">
-            <label class="font-bold">Időpont:</label>
+          <EventInfoRow label="Időpont">
             <time :datetime="(new Date(event.date)).toUTCString()">{{ formatDate(event.date, 'Y-m-d H:i') }}</time>
-          </div>
+          </EventInfoRow>
 
-          <div class="flex items-center gap-1 text-sm">
-            <label class="font-bold">Férőhely:</label>
+          <EventInfoRow label="Férőhely">
             <span>{{ event.capacity }}</span>
-          </div>
+          </EventInfoRow>
         </div>
 
         <template #footer>
