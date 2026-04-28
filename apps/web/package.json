@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "build": "nuxt build",
-    "dev": "nuxt dev",
+    "dev": "nuxt dev --port 3080",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
@@ -13,8 +13,10 @@
     "@nuxt/eslint": "^1.15.2",
     "@nuxt/ui": "^3.3.7",
     "@pinia/nuxt": "^0.11.3",
+    "@repo/shared": "*",
     "nuxt": "^3.21.2",
     "vue": "^3.5.33",
-    "vue-router": "^4.6.4"
+    "vue-router": "^4.6.4",
+    "zod": "^4.3.6"
   }
 }
