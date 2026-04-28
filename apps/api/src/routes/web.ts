@@ -1,14 +1,16 @@
+import dotenv from "dotenv";
+import path from "path";
 import { Hono } from "hono";
 import { cors } from "hono/cors";
 import event from "../controllers/event.ts";
 import events from "../controllers/events.ts";
 import booking from "../controllers/booking.ts";
 
-const app = new Hono();
+dotenv.config({
+  path: path.resolve(process.cwd(), "../../.env"),
+});
 
-app.route("/event", event);
-app.route("/events", events);
-app.route("/booking", booking);
+const app = new Hono();
 
 app.use(
   "/*",
@@ -18,5 +20,9 @@ app.use(
     allowMethods: [ "POST", "GET", "PUT", "DELETE", "OPTIONS" ],
   })
 );
+
+app.route("/event", event);
+app.route("/events", events);
+app.route("/booking", booking);
 
 export default app;
