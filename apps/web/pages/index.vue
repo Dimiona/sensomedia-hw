@@ -5,24 +5,7 @@ import { formatDate } from '~/utility/date';
 
 const toast = useToast();
 
-const generateEvents = (count = 12) => {
-  return Array.from({ length: count }, (_, i) => {
-    const randomCapacity = Math.floor(Math.random() * 100) + 10; // 10–109
-    const futureDate = new Date(
-      Date.now() + Math.floor(Math.random() * 30) * 24 * 60 * 60 * 1000
-    );
-
-    return {
-      _id: crypto.randomUUID(),
-      capacity: randomCapacity,
-      date: futureDate,
-      title: `Esemény #${i + 1}`,
-      description: 'kjshakjfds fjkdsha fjkdshaf kjdshajkf dhsakjf hdsakjf hdsajkf hdsajkfhsadjk fdskjhfksdjghakjfdsahgf jksdh',
-    };
-  });
-};
-
-const events = ref<TEventResponseSchema[]>(generateEvents());
+const events = ref<TEventResponseSchema[]>([]);
 const isLoading = ref<boolean>(false);
 const hasError = ref<boolean>(false);
 
@@ -32,7 +15,7 @@ const fetch = async () => {
   try {
     const response = await useApiService().event.list(1, 100);
     if (!(response instanceof Error)) {
-      events.value = response.payload as TEventResponseSchema[];
+      events.value = response.payload.items as TEventResponseSchema[];
     }
     else {
       hasError.value = true;
@@ -92,10 +75,10 @@ await fetch();
     <section class="grid grid-cols-3 gap-10">
       <UCard
         v-for="(event, index) in events"
-        :key="`event_${index}_${event._id.toString()}`"
+        :key="`event_${index}_${event._id}`"
       >
         <template #header>
-          <RouterLink :to="`/event/${event._id.toString()}`" class="font-bold">{{ event.title }}</RouterLink>
+          <RouterLink :to="`/event/${event._id}`" class="font-bold">{{ event.title }}</RouterLink>
         </template>
 
         <div class="flex flex-col gap-3">
@@ -103,7 +86,7 @@ await fetch();
 
           <div class="flex items-center gap-1 text-sm">
             <label class="font-bold">Időpont:</label>
-            <time :datetime="event.date.toUTCString()">{{ formatDate(event.date, 'Y.m.d H:i') }}</time>
+            <time :datetime="(new Date(event.date)).toUTCString()">{{ formatDate(event.date, 'Y-m-d H:i') }}</time>
           </div>
 
           <div class="flex items-center gap-1 text-sm">
@@ -116,7 +99,7 @@ await fetch();
           <UButton
             class="hover:cursor-pointer ml-auto"
             label="Megnézem"
-            @click="() => navigateTo(`/event/${event._id.toString()}`)"
+            @click="navigateTo(`/event/${event._id}`)"
           />
         </template>
       </UCard>
