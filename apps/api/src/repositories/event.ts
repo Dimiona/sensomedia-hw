@@ -14,6 +14,7 @@ class EventRepository {
       })
       .skip((page - 1) * perpage)
       .limit(perpage)
+      .toArray()
     ;
   }
 
