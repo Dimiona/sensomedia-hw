@@ -1,10 +1,6 @@
-import type z from "zod";
-import eventRepository from "../repositories/events.ts";
-import { eventCreateSchema, eventResponseSchema } from "@repo/shared/schemas/event";
+import eventRepository from "../repositories/event.ts";
 import { repositoryResponder } from "../utility/repositoryResponder.ts";
-
-export type TEventCreateSchema = z.infer<typeof eventCreateSchema>;
-export type TEventResponseSchema = z.infer<typeof eventResponseSchema>;
+import type { TEventCreateSchema, TEventResponseSchema } from "../types/event.d.ts";
 
 class EventService {
   async createEvent(data: TEventCreateSchema) {
@@ -22,8 +18,11 @@ class EventService {
 
   async updateEvent(id: TEventResponseSchema['_id'], data: TEventCreateSchema) {
     const exist = await this.getEvent(id);
-    if (!exist) {
+    if (!exist.data && !exist.error) {
       throw new Error('There is no document with the given ID.');
+    }
+    if (exist.error) {
+      return exist;
     }
 
     return await repositoryResponder(() => eventRepository.updateById(id, data));
@@ -31,8 +30,11 @@ class EventService {
 
   async deleteEvent(id: TEventResponseSchema['_id']) {
     const exist = await this.getEvent(id);
-    if (!exist) {
+    if (!exist.data && !exist.error) {
       throw new Error('There is no document with the given ID.');
+    }
+    if (exist.error) {
+      return exist;
     }
 
     return await repositoryResponder(() => eventRepository.deleteById(id));

@@ -1,14 +1,10 @@
-import type z from "zod";
 import bookingRepository from "../repositories/booking.ts";
 import { repositoryResponder } from "../utility/repositoryResponder.ts";
-import type { bookingCreateSchema, bookingResponseSchema } from "@repo/shared/schemas/booking";
-
-export type TBookingCreateSchema = z.infer<typeof bookingCreateSchema>;
-export type TBookingResponseSchema = z.infer<typeof bookingResponseSchema>;
+import type { TBookingCreateSchema, TBookingResponseSchema } from "../types/booking.d.ts";
 
 class BookingService {
-  async createBooking(data: TBookingCreateSchema) {
-    return await repositoryResponder(() => bookingRepository.create(data));
+  async createBooking(data: TBookingCreateSchema, eventCapacity: number) {
+    return await repositoryResponder(() => bookingRepository.create(data, eventCapacity));
   }
 
   async getBooking(id: TBookingResponseSchema['_id']) {
@@ -17,8 +13,11 @@ class BookingService {
 
   async updateBooking(id: TBookingResponseSchema['_id'], data: TBookingCreateSchema) {
     const exist = await this.getBooking(id);
-    if (!exist) {
+    if (!exist.data && !exist.error) {
       throw new Error('There is no document with the given ID.');
+    }
+    if (exist.error) {
+      return exist;
     }
 
     return await repositoryResponder(() => bookingRepository.updateById(id, data));
@@ -26,8 +25,11 @@ class BookingService {
 
   async deleteBooking(id: TBookingResponseSchema['_id']) {
     const exist = await this.getBooking(id);
-    if (!exist) {
+    if (!exist.data && !exist.error) {
       throw new Error('There is no document with the given ID.');
+    }
+    if (exist.error) {
+      return exist;
     }
 
     return await repositoryResponder(() => bookingRepository.deleteById(id));
