@@ -5,6 +5,8 @@
   "private": true,
   "exports": {
     "./schemas": "./src/schemas/index.ts",
-    "./schemas/*": "./src/schemas/*.ts"
+    "./schemas/*": "./src/schemas/*.ts",
+    "./types": "./src/types/index.ts",
+    "./types/*": "./src/types/*.ts"
   }
 }
