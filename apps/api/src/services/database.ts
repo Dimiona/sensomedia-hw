@@ -54,6 +54,14 @@ const disconnectMongoDB = async () => {
   await client.close();
 };
 
+const getClient = () => {
+  if (!(client instanceof MongoClient)) {
+    throw new Error("There is no MongoClient yet. Try connect first.");
+  }
+
+  return client;
+};
+
 const getDatabase = () => {
   if (!(db instanceof Db)) {
     throw new Error("There is no active database connection yet. Try connect first.");
@@ -65,5 +73,6 @@ const getDatabase = () => {
 export {
   connectToMongoDB,
   disconnectMongoDB,
+  getClient,
   getDatabase,
 };
