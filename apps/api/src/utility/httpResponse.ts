@@ -3,8 +3,12 @@ import type { ContentfulStatusCode } from "hono/utils/http-status";
 import z from "zod";
 import type { $ZodError } from "zod/v4/core";
 
-export function errorResponse<C extends Context>(c: C, errors: string | string[], statusCode: number = 500) {
-  return c.json({ error: Array.isArray(errors) ? errors.join("\n") : errors }, 500);
+export function successResponse<C extends Context>(c: C, responseData: any, statusCode: ContentfulStatusCode | undefined = 200) {
+  return c.json(responseData, statusCode);
+};
+
+export function errorResponse<C extends Context>(c: C, errors: string | string[], statusCode: ContentfulStatusCode | undefined = 500) {
+  return c.json({ error: Array.isArray(errors) ? errors.join("\n") : errors }, statusCode);
 };
 
 export function badRequestResponse<C extends Context>(c: C, errors: string | string[]) {
