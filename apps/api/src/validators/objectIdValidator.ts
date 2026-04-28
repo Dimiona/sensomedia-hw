@@ -1,11 +1,6 @@
-import { ObjectId } from "mongodb";
+import { objectIdSchema } from "@repo/shared/schemas/scaffolding";
 import { validator } from "hono/validator";
 import z from "zod";
-
-export const objectIdSchema = z.string().refine(
-  (v) => ObjectId.isValid(v) && new ObjectId(v).toString() === v,
-  { message: "Invalid MongoDB ObjectId was as given." }
-);
 
 const paramsWithIdSchema = z.object({
   id: objectIdSchema,
