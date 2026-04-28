@@ -1,0 +1,122 @@
+[
+  {
+    "capacity": 50,
+    "date": { "$date": "2026-05-01T10:00:00Z" },
+    "title": "Esemény #1",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mattis, diam sit amet dictum volutpat, libero metus rhoncus tellus, et cursus turpis turpis rhoncus urna. In placerat mauris a nisl pharetra, at sollicitudin felis luctus. Praesent tempus arcu sit amet eros sollicitudin, et interdum purus dapibus. Nullam ultricies, nunc nec facilisis ullamcorper, ante augue semper elit, nec egestas est eros eleifend justo. Pellentesque quis ornare nisi. Ut dictum magna id ex volutpat, eget consequat arcu mattis. Quisque a ante a neque gravida dictum. Sed rutrum, erat sit amet dapibus convallis, arcu arcu tincidunt lorem, quis hendrerit justo ex sit amet mauris. Nunc quis sollicitudin justo, sit amet porttitor lorem. Aenean non accumsan mi. In id massa velit. Curabitur tincidunt diam vel imperdiet aliquam. Nullam egestas erat vitae ligula mattis, nec pretium odio elementum."
+  },
+  {
+    "capacity": 75,
+    "date": { "$date": "2026-05-02T16:00:00Z" },
+    "title": "Esemény #2",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mattis, diam sit amet dictum volutpat, libero metus rhoncus tellus, et cursus turpis turpis rhoncus urna. In placerat mauris a nisl pharetra, at sollicitudin felis luctus. Praesent tempus arcu sit amet eros sollicitudin, et interdum purus dapibus. Nullam ultricies, nunc nec facilisis ullamcorper, ante augue semper elit, nec egestas est eros eleifend justo. Pellentesque quis ornare nisi. Ut dictum magna id ex volutpat, eget consequat arcu mattis. Quisque a ante a neque gravida dictum. Sed rutrum, erat sit amet dapibus convallis, arcu arcu tincidunt lorem, quis hendrerit justo ex sit amet mauris. Nunc quis sollicitudin justo, sit amet porttitor lorem. Aenean non accumsan mi. In id massa velit. Curabitur tincidunt diam vel imperdiet aliquam. Nullam egestas erat vitae ligula mattis, nec pretium odio elementum."
+  },
+  {
+    "capacity": 20,
+    "date": { "$date": "2026-05-09T19:30:00Z" },
+    "title": "Esemény #3",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mattis, diam sit amet dictum volutpat, libero metus rhoncus tellus, et cursus turpis turpis rhoncus urna. In placerat mauris a nisl pharetra, at sollicitudin felis luctus. Praesent tempus arcu sit amet eros sollicitudin, et interdum purus dapibus. Nullam ultricies, nunc nec facilisis ullamcorper, ante augue semper elit, nec egestas est eros eleifend justo. Pellentesque quis ornare nisi. Ut dictum magna id ex volutpat, eget consequat arcu mattis. Quisque a ante a neque gravida dictum. Sed rutrum, erat sit amet dapibus convallis, arcu arcu tincidunt lorem, quis hendrerit justo ex sit amet mauris. Nunc quis sollicitudin justo, sit amet porttitor lorem. Aenean non accumsan mi. In id massa velit. Curabitur tincidunt diam vel imperdiet aliquam. Nullam egestas erat vitae ligula mattis, nec pretium odio elementum."
+  },
+  {
+    "capacity": 43,
+    "date": { "$date": "2026-05-10T13:00:00Z" },
+    "title": "Esemény #4",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mattis, diam sit amet dictum volutpat, libero metus rhoncus tellus, et cursus turpis turpis rhoncus urna. In placerat mauris a nisl pharetra, at sollicitudin felis luctus. Praesent tempus arcu sit amet eros sollicitudin, et interdum purus dapibus. Nullam ultricies, nunc nec facilisis ullamcorper, ante augue semper elit, nec egestas est eros eleifend justo. Pellentesque quis ornare nisi. Ut dictum magna id ex volutpat, eget consequat arcu mattis. Quisque a ante a neque gravida dictum. Sed rutrum, erat sit amet dapibus convallis, arcu arcu tincidunt lorem, quis hendrerit justo ex sit amet mauris. Nunc quis sollicitudin justo, sit amet porttitor lorem. Aenean non accumsan mi. In id massa velit. Curabitur tincidunt diam vel imperdiet aliquam. Nullam egestas erat vitae ligula mattis, nec pretium odio elementum."
+  },
+  {
+    "capacity": 34,
+    "date": { "$date": "2026-05-20T19:00:00Z" },
+    "title": "Esemény #5",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mattis, diam sit amet dictum volutpat, libero metus rhoncus tellus, et cursus turpis turpis rhoncus urna. In placerat mauris a nisl pharetra, at sollicitudin felis luctus. Praesent tempus arcu sit amet eros sollicitudin, et interdum purus dapibus. Nullam ultricies, nunc nec facilisis ullamcorper, ante augue semper elit, nec egestas est eros eleifend justo. Pellentesque quis ornare nisi. Ut dictum magna id ex volutpat, eget consequat arcu mattis. Quisque a ante a neque gravida dictum. Sed rutrum, erat sit amet dapibus convallis, arcu arcu tincidunt lorem, quis hendrerit justo ex sit amet mauris. Nunc quis sollicitudin justo, sit amet porttitor lorem. Aenean non accumsan mi. In id massa velit. Curabitur tincidunt diam vel imperdiet aliquam. Nullam egestas erat vitae ligula mattis, nec pretium odio elementum."
+  },
+  {
+    "capacity": 63,
+    "date": { "$date": "2026-05-23T16:00:00Z" },
+    "title": "Esemény #6",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mattis, diam sit amet dictum volutpat, libero metus rhoncus tellus, et cursus turpis turpis rhoncus urna. In placerat mauris a nisl pharetra, at sollicitudin felis luctus. Praesent tempus arcu sit amet eros sollicitudin, et interdum purus dapibus. Nullam ultricies, nunc nec facilisis ullamcorper, ante augue semper elit, nec egestas est eros eleifend justo. Pellentesque quis ornare nisi. Ut dictum magna id ex volutpat, eget consequat arcu mattis. Quisque a ante a neque gravida dictum. Sed rutrum, erat sit amet dapibus convallis, arcu arcu tincidunt lorem, quis hendrerit justo ex sit amet mauris. Nunc quis sollicitudin justo, sit amet porttitor lorem. Aenean non accumsan mi. In id massa velit. Curabitur tincidunt diam vel imperdiet aliquam. Nullam egestas erat vitae ligula mattis, nec pretium odio elementum."
+  },
+  {
+    "capacity": 13,
+    "date": { "$date": "2026-05-30T17:00:00Z" },
+    "title": "Esemény #7",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mattis, diam sit amet dictum volutpat, libero metus rhoncus tellus, et cursus turpis turpis rhoncus urna. In placerat mauris a nisl pharetra, at sollicitudin felis luctus. Praesent tempus arcu sit amet eros sollicitudin, et interdum purus dapibus. Nullam ultricies, nunc nec facilisis ullamcorper, ante augue semper elit, nec egestas est eros eleifend justo. Pellentesque quis ornare nisi. Ut dictum magna id ex volutpat, eget consequat arcu mattis. Quisque a ante a neque gravida dictum. Sed rutrum, erat sit amet dapibus convallis, arcu arcu tincidunt lorem, quis hendrerit justo ex sit amet mauris. Nunc quis sollicitudin justo, sit amet porttitor lorem. Aenean non accumsan mi. In id massa velit. Curabitur tincidunt diam vel imperdiet aliquam. Nullam egestas erat vitae ligula mattis, nec pretium odio elementum."
+  },
+  {
+    "capacity": 43,
+    "date": { "$date": "2026-05-17T10:00:00Z" },
+    "title": "Esemény #8",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mattis, diam sit amet dictum volutpat, libero metus rhoncus tellus, et cursus turpis turpis rhoncus urna. In placerat mauris a nisl pharetra, at sollicitudin felis luctus. Praesent tempus arcu sit amet eros sollicitudin, et interdum purus dapibus. Nullam ultricies, nunc nec facilisis ullamcorper, ante augue semper elit, nec egestas est eros eleifend justo. Pellentesque quis ornare nisi. Ut dictum magna id ex volutpat, eget consequat arcu mattis. Quisque a ante a neque gravida dictum. Sed rutrum, erat sit amet dapibus convallis, arcu arcu tincidunt lorem, quis hendrerit justo ex sit amet mauris. Nunc quis sollicitudin justo, sit amet porttitor lorem. Aenean non accumsan mi. In id massa velit. Curabitur tincidunt diam vel imperdiet aliquam. Nullam egestas erat vitae ligula mattis, nec pretium odio elementum."
+  },
+  {
+    "capacity": 89,
+    "date": { "$date": "2026-05-19T21:00:00Z" },
+    "title": "Esemény #9",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mattis, diam sit amet dictum volutpat, libero metus rhoncus tellus, et cursus turpis turpis rhoncus urna. In placerat mauris a nisl pharetra, at sollicitudin felis luctus. Praesent tempus arcu sit amet eros sollicitudin, et interdum purus dapibus. Nullam ultricies, nunc nec facilisis ullamcorper, ante augue semper elit, nec egestas est eros eleifend justo. Pellentesque quis ornare nisi. Ut dictum magna id ex volutpat, eget consequat arcu mattis. Quisque a ante a neque gravida dictum. Sed rutrum, erat sit amet dapibus convallis, arcu arcu tincidunt lorem, quis hendrerit justo ex sit amet mauris. Nunc quis sollicitudin justo, sit amet porttitor lorem. Aenean non accumsan mi. In id massa velit. Curabitur tincidunt diam vel imperdiet aliquam. Nullam egestas erat vitae ligula mattis, nec pretium odio elementum."
+  },
+  {
+    "capacity": 65,
+    "date": { "$date": "2026-06-05T19:00:00Z" },
+    "title": "Esemény #10",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mattis, diam sit amet dictum volutpat, libero metus rhoncus tellus, et cursus turpis turpis rhoncus urna. In placerat mauris a nisl pharetra, at sollicitudin felis luctus. Praesent tempus arcu sit amet eros sollicitudin, et interdum purus dapibus. Nullam ultricies, nunc nec facilisis ullamcorper, ante augue semper elit, nec egestas est eros eleifend justo. Pellentesque quis ornare nisi. Ut dictum magna id ex volutpat, eget consequat arcu mattis. Quisque a ante a neque gravida dictum. Sed rutrum, erat sit amet dapibus convallis, arcu arcu tincidunt lorem, quis hendrerit justo ex sit amet mauris. Nunc quis sollicitudin justo, sit amet porttitor lorem. Aenean non accumsan mi. In id massa velit. Curabitur tincidunt diam vel imperdiet aliquam. Nullam egestas erat vitae ligula mattis, nec pretium odio elementum."
+  },
+  {
+    "capacity": 40,
+    "date": { "$date": "2026-06-09T19:30:00Z" },
+    "title": "Esemény #11",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mattis, diam sit amet dictum volutpat, libero metus rhoncus tellus, et cursus turpis turpis rhoncus urna. In placerat mauris a nisl pharetra, at sollicitudin felis luctus. Praesent tempus arcu sit amet eros sollicitudin, et interdum purus dapibus. Nullam ultricies, nunc nec facilisis ullamcorper, ante augue semper elit, nec egestas est eros eleifend justo. Pellentesque quis ornare nisi. Ut dictum magna id ex volutpat, eget consequat arcu mattis. Quisque a ante a neque gravida dictum. Sed rutrum, erat sit amet dapibus convallis, arcu arcu tincidunt lorem, quis hendrerit justo ex sit amet mauris. Nunc quis sollicitudin justo, sit amet porttitor lorem. Aenean non accumsan mi. In id massa velit. Curabitur tincidunt diam vel imperdiet aliquam. Nullam egestas erat vitae ligula mattis, nec pretium odio elementum."
+  },
+  {
+    "capacity": 50,
+    "date": { "$date": "2026-06-11T22:00:00Z" },
+    "title": "Esemény #12",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mattis, diam sit amet dictum volutpat, libero metus rhoncus tellus, et cursus turpis turpis rhoncus urna. In placerat mauris a nisl pharetra, at sollicitudin felis luctus. Praesent tempus arcu sit amet eros sollicitudin, et interdum purus dapibus. Nullam ultricies, nunc nec facilisis ullamcorper, ante augue semper elit, nec egestas est eros eleifend justo. Pellentesque quis ornare nisi. Ut dictum magna id ex volutpat, eget consequat arcu mattis. Quisque a ante a neque gravida dictum. Sed rutrum, erat sit amet dapibus convallis, arcu arcu tincidunt lorem, quis hendrerit justo ex sit amet mauris. Nunc quis sollicitudin justo, sit amet porttitor lorem. Aenean non accumsan mi. In id massa velit. Curabitur tincidunt diam vel imperdiet aliquam. Nullam egestas erat vitae ligula mattis, nec pretium odio elementum."
+  },
+  {
+    "capacity": 150,
+    "date": { "$date": "2026-06-26T20:30:00Z" },
+    "title": "Esemény #13",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mattis, diam sit amet dictum volutpat, libero metus rhoncus tellus, et cursus turpis turpis rhoncus urna. In placerat mauris a nisl pharetra, at sollicitudin felis luctus. Praesent tempus arcu sit amet eros sollicitudin, et interdum purus dapibus. Nullam ultricies, nunc nec facilisis ullamcorper, ante augue semper elit, nec egestas est eros eleifend justo. Pellentesque quis ornare nisi. Ut dictum magna id ex volutpat, eget consequat arcu mattis. Quisque a ante a neque gravida dictum. Sed rutrum, erat sit amet dapibus convallis, arcu arcu tincidunt lorem, quis hendrerit justo ex sit amet mauris. Nunc quis sollicitudin justo, sit amet porttitor lorem. Aenean non accumsan mi. In id massa velit. Curabitur tincidunt diam vel imperdiet aliquam. Nullam egestas erat vitae ligula mattis, nec pretium odio elementum."
+  },
+  {
+    "capacity": 70,
+    "date": { "$date": "2026-06-06T18:30:00Z" },
+    "title": "Esemény #14",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mattis, diam sit amet dictum volutpat, libero metus rhoncus tellus, et cursus turpis turpis rhoncus urna. In placerat mauris a nisl pharetra, at sollicitudin felis luctus. Praesent tempus arcu sit amet eros sollicitudin, et interdum purus dapibus. Nullam ultricies, nunc nec facilisis ullamcorper, ante augue semper elit, nec egestas est eros eleifend justo. Pellentesque quis ornare nisi. Ut dictum magna id ex volutpat, eget consequat arcu mattis. Quisque a ante a neque gravida dictum. Sed rutrum, erat sit amet dapibus convallis, arcu arcu tincidunt lorem, quis hendrerit justo ex sit amet mauris. Nunc quis sollicitudin justo, sit amet porttitor lorem. Aenean non accumsan mi. In id massa velit. Curabitur tincidunt diam vel imperdiet aliquam. Nullam egestas erat vitae ligula mattis, nec pretium odio elementum."
+  },
+  {
+    "capacity": 30,
+    "date": { "$date": "2026-06-12T17:00:00Z" },
+    "title": "Esemény #15",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mattis, diam sit amet dictum volutpat, libero metus rhoncus tellus, et cursus turpis turpis rhoncus urna. In placerat mauris a nisl pharetra, at sollicitudin felis luctus. Praesent tempus arcu sit amet eros sollicitudin, et interdum purus dapibus. Nullam ultricies, nunc nec facilisis ullamcorper, ante augue semper elit, nec egestas est eros eleifend justo. Pellentesque quis ornare nisi. Ut dictum magna id ex volutpat, eget consequat arcu mattis. Quisque a ante a neque gravida dictum. Sed rutrum, erat sit amet dapibus convallis, arcu arcu tincidunt lorem, quis hendrerit justo ex sit amet mauris. Nunc quis sollicitudin justo, sit amet porttitor lorem. Aenean non accumsan mi. In id massa velit. Curabitur tincidunt diam vel imperdiet aliquam. Nullam egestas erat vitae ligula mattis, nec pretium odio elementum."
+  },
+  {
+    "capacity": 50,
+    "date": { "$date": "2026-06-21T21:30:00Z" },
+    "title": "Esemény #16",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mattis, diam sit amet dictum volutpat, libero metus rhoncus tellus, et cursus turpis turpis rhoncus urna. In placerat mauris a nisl pharetra, at sollicitudin felis luctus. Praesent tempus arcu sit amet eros sollicitudin, et interdum purus dapibus. Nullam ultricies, nunc nec facilisis ullamcorper, ante augue semper elit, nec egestas est eros eleifend justo. Pellentesque quis ornare nisi. Ut dictum magna id ex volutpat, eget consequat arcu mattis. Quisque a ante a neque gravida dictum. Sed rutrum, erat sit amet dapibus convallis, arcu arcu tincidunt lorem, quis hendrerit justo ex sit amet mauris. Nunc quis sollicitudin justo, sit amet porttitor lorem. Aenean non accumsan mi. In id massa velit. Curabitur tincidunt diam vel imperdiet aliquam. Nullam egestas erat vitae ligula mattis, nec pretium odio elementum."
+  },
+  {
+    "capacity": 50,
+    "date": { "$date": "2026-06-28T18:30:00Z" },
+    "title": "Esemény #17",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mattis, diam sit amet dictum volutpat, libero metus rhoncus tellus, et cursus turpis turpis rhoncus urna. In placerat mauris a nisl pharetra, at sollicitudin felis luctus. Praesent tempus arcu sit amet eros sollicitudin, et interdum purus dapibus. Nullam ultricies, nunc nec facilisis ullamcorper, ante augue semper elit, nec egestas est eros eleifend justo. Pellentesque quis ornare nisi. Ut dictum magna id ex volutpat, eget consequat arcu mattis. Quisque a ante a neque gravida dictum. Sed rutrum, erat sit amet dapibus convallis, arcu arcu tincidunt lorem, quis hendrerit justo ex sit amet mauris. Nunc quis sollicitudin justo, sit amet porttitor lorem. Aenean non accumsan mi. In id massa velit. Curabitur tincidunt diam vel imperdiet aliquam. Nullam egestas erat vitae ligula mattis, nec pretium odio elementum."
+  },
+  {
+    "capacity": 30,
+    "date": { "$date": "2026-06-04T19:00:00Z" },
+    "title": "Esemény #18",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mattis, diam sit amet dictum volutpat, libero metus rhoncus tellus, et cursus turpis turpis rhoncus urna. In placerat mauris a nisl pharetra, at sollicitudin felis luctus. Praesent tempus arcu sit amet eros sollicitudin, et interdum purus dapibus. Nullam ultricies, nunc nec facilisis ullamcorper, ante augue semper elit, nec egestas est eros eleifend justo. Pellentesque quis ornare nisi. Ut dictum magna id ex volutpat, eget consequat arcu mattis. Quisque a ante a neque gravida dictum. Sed rutrum, erat sit amet dapibus convallis, arcu arcu tincidunt lorem, quis hendrerit justo ex sit amet mauris. Nunc quis sollicitudin justo, sit amet porttitor lorem. Aenean non accumsan mi. In id massa velit. Curabitur tincidunt diam vel imperdiet aliquam. Nullam egestas erat vitae ligula mattis, nec pretium odio elementum."
+  },
+  {
+    "capacity": 90,
+    "date": { "$date": "2026-06-30T16:30:00Z" },
+    "title": "Esemény #19",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mattis, diam sit amet dictum volutpat, libero metus rhoncus tellus, et cursus turpis turpis rhoncus urna. In placerat mauris a nisl pharetra, at sollicitudin felis luctus. Praesent tempus arcu sit amet eros sollicitudin, et interdum purus dapibus. Nullam ultricies, nunc nec facilisis ullamcorper, ante augue semper elit, nec egestas est eros eleifend justo. Pellentesque quis ornare nisi. Ut dictum magna id ex volutpat, eget consequat arcu mattis. Quisque a ante a neque gravida dictum. Sed rutrum, erat sit amet dapibus convallis, arcu arcu tincidunt lorem, quis hendrerit justo ex sit amet mauris. Nunc quis sollicitudin justo, sit amet porttitor lorem. Aenean non accumsan mi. In id massa velit. Curabitur tincidunt diam vel imperdiet aliquam. Nullam egestas erat vitae ligula mattis, nec pretium odio elementum."
+  },
+  {
+    "capacity": 110,
+    "date": { "$date": "2026-06-13T19:30:00Z" },
+    "title": "Esemény #20",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mattis, diam sit amet dictum volutpat, libero metus rhoncus tellus, et cursus turpis turpis rhoncus urna. In placerat mauris a nisl pharetra, at sollicitudin felis luctus. Praesent tempus arcu sit amet eros sollicitudin, et interdum purus dapibus. Nullam ultricies, nunc nec facilisis ullamcorper, ante augue semper elit, nec egestas est eros eleifend justo. Pellentesque quis ornare nisi. Ut dictum magna id ex volutpat, eget consequat arcu mattis. Quisque a ante a neque gravida dictum. Sed rutrum, erat sit amet dapibus convallis, arcu arcu tincidunt lorem, quis hendrerit justo ex sit amet mauris. Nunc quis sollicitudin justo, sit amet porttitor lorem. Aenean non accumsan mi. In id massa velit. Curabitur tincidunt diam vel imperdiet aliquam. Nullam egestas erat vitae ligula mattis, nec pretium odio elementum."
+  }
+]
