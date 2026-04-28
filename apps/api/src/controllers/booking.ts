@@ -1,28 +1,57 @@
-import { bookingCreateSchema, bookingResponseSchema } from "@repo/shared/schemas/booking";
 import { Hono } from "hono";
-import bookingService from "../services/booking.ts"
-import { invalidSchemaResponse } from "../utility/httpResponse.ts";
+import { bookingCreateSchema, bookingResponseSchema } from "@repo/shared/schemas/booking";
+import bookingService from "../services/booking.ts";
+import eventService from "../services/events.ts";
+import idempotencyService from "../services/idempotency.ts";
+import { invalidSchemaResponse, successResponse } from "../utility/httpResponse.ts";
+import { idempotencyValidator } from "../validators/idempotencyValidator.ts";
+import type { ContentfulStatusCode } from "hono/utils/http-status";
 
 const booking = new Hono();
 
 booking.post(
   '/',
+  idempotencyValidator,
   async (c) => {
-    const body = await c.req.json();
+    const { idempotencyKey } = c.req.valid('header');
 
-    const parsedEvent = bookingCreateSchema.safeParse(body);
-    if (!parsedEvent.success) {
-      return invalidSchemaResponse(c, 'event', parsedEvent.error);
+    const existing = await idempotencyService.getIdempotency(idempotencyKey);
+    if (existing.data) {
+      return successResponse(c, existing.data.response, existing.data!.statusCode as ContentfulStatusCode);
     }
 
-    const event = await bookingService.createBooking(parsedEvent.data);
+    const body = await c.req.json();
 
-    const parsedResponse = bookingResponseSchema.safeParse(event);
+    const parsedBooking = bookingCreateSchema.safeParse(body);
+    if (!parsedBooking.success) {
+      return invalidSchemaResponse(c, 'booking', parsedBooking.error);
+    }
+
+    const event = await eventService.getEvent(parsedBooking.data.eventId);
+    if (!event.data && !event.error) {
+      await idempotencyService.createIdempotency({
+        key: idempotencyKey,
+        response: null,
+        statusCode: 404,
+      });
+
+      return successResponse(c, null, 404);
+    }
+
+    const booking = await bookingService.createBooking(parsedBooking.data, event.data!.capacity);
+
+    const parsedResponse = bookingResponseSchema.safeParse(booking.data);
     if (!parsedResponse.success) {
       return invalidSchemaResponse(c, 'response', parsedResponse.error, 500);
     }
 
-    return c.json(parsedResponse.data);
+    await idempotencyService.createIdempotency({
+      key: idempotencyKey,
+      response: parsedResponse.data,
+      statusCode: 200,
+    });
+
+    return successResponse(c, parsedResponse.data);
   }
 );
 
