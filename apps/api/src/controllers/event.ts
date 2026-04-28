@@ -2,9 +2,8 @@ import { Hono } from "hono";
 import eventService from "../services/events.ts"
 import { eventCreateSchema, eventResponseSchema } from "@repo/shared/schemas/event";
 import { ObjectId } from "mongodb";
-import z from "zod";
 import { objectIdValidator } from "../validators/objectIdValidator.ts";
-import { invalidSchemaResponse, successResponse } from "../utility/httpResponse.ts";
+import { errorResponse, invalidSchemaResponse, successResponse } from "../utility/httpResponse.ts";
 
 const event = new Hono();
 
@@ -15,7 +14,7 @@ event.post(
 
     const parsedEvent = eventCreateSchema.safeParse(body);
     if (!parsedEvent.success) {
-      return c.json({ error: `Invalid event schema: ${z.treeifyError(parsedEvent.error).errors.join('\n')}` }, 500);
+      return invalidSchemaResponse(c, "event", parsedEvent.error, 500);
     }
 
     const event = await eventService.createEvent(parsedEvent.data);
@@ -77,7 +76,7 @@ event.delete(
 
     const { data, error } = await eventService.deleteEvent(new ObjectId(id));
     if (error) {
-      return c.json({ error: error.message }, 500);
+      return errorResponse(c, error.message, 500);
     }
 
     const parsedResponse = eventResponseSchema.safeParse(data);
