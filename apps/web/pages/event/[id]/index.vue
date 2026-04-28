@@ -90,6 +90,14 @@ await fetch();
       <EventInfoRow label="Férőhely">
         <span>{{ event.capacity }}</span>
       </EventInfoRow>
+
+      <UButton
+        class="hover:cursor-pointer justify-center mt-5"
+        icon="i-lucide-shopping-bag"
+        label="Foglalok"
+        size="xl"
+        @click="navigateTo(`/event/${event._id}/booking`)"
+      />
     </article>
 
     <!-- Spinner-t nem találtam a Nuxt UI-ban -->
