@@ -3,6 +3,8 @@ import { useApiService } from '@/composables/useApiService';
 import type { TEventResponseSchema } from '@repo/shared/types/event.d';
 import { formatDate } from '~/utility/date';
 
+const DESCRIPTION_TRIM_AFTER_LENGTH: number = 300;
+
 const toast = useToast();
 
 const events = ref<TEventResponseSchema[]>([]);
@@ -12,25 +14,22 @@ const hasError = ref<boolean>(false);
 const fetch = async () => {
   hasError.value = false;
 
+  toast.clear();
+
   try {
     const response = await useApiService().event.list(1, 100);
+
     if (!(response instanceof Error)) {
-      events.value = response.payload.items as TEventResponseSchema[];
+      events.value = response.payload!.items as TEventResponseSchema[];
     }
     else {
       hasError.value = true;
 
       toast.add({
         title: 'Hiba történt az események lekérdezése során.',
+        description: import.meta.dev ? response.data?.error : '',
         color: 'error',
       });
-
-      if (import.meta.dev) {
-        toast.add({
-          title: `Hiba oka: ${response.message}`,
-          color: 'error',
-        });
-      }
     }
   }
   catch (e: unknown) {
@@ -72,7 +71,7 @@ await fetch();
       :loading="isLoading"
     />
 
-    <section class="grid grid-cols-3 gap-10">
+    <section v-else class="grid grid-cols-3 gap-10">
       <UCard
         v-for="(event, index) in events"
         :key="`event_${index}_${event._id}`"
@@ -82,7 +81,7 @@ await fetch();
         </template>
 
         <div class="flex flex-col gap-3">
-          <p class="text-sm font-medium leading-7">{{ event.description ? (event.description.length > 500 ? (event.description.substring(0, 500) + '..') : event.description) : '' }}</p>
+          <p class="text-sm font-medium leading-7">{{ event.description ? (event.description.length > DESCRIPTION_TRIM_AFTER_LENGTH ? (event.description.substring(0, DESCRIPTION_TRIM_AFTER_LENGTH) + '..') : event.description) : '' }}</p>
 
           <EventInfoRow label="Időpont">
             <time :datetime="(new Date(event.date)).toUTCString()">{{ formatDate(event.date, 'Y-m-d H:i') }}</time>
