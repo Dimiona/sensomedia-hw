@@ -3,9 +3,10 @@ import { bookingCreateSchema, bookingResponseSchema } from "@repo/shared/schemas
 import bookingService from "../services/booking.ts";
 import eventService from "../services/events.ts";
 import idempotencyService from "../services/idempotency.ts";
-import { invalidSchemaResponse, successResponse } from "../utility/httpResponse.ts";
+import { errorResponse, invalidSchemaResponse, successResponse } from "../utility/httpResponse.ts";
 import { idempotencyValidator } from "../validators/idempotencyValidator.ts";
 import type { ContentfulStatusCode } from "hono/utils/http-status";
+import { ObjectId } from "mongodb";
 
 const booking = new Hono();
 
@@ -27,7 +28,7 @@ booking.post(
       return invalidSchemaResponse(c, 'booking', parsedBooking.error);
     }
 
-    const event = await eventService.getEvent(parsedBooking.data.eventId);
+    const event = await eventService.getEvent(new ObjectId(parsedBooking.data.eventId.toString()));
     if (!event.data && !event.error) {
       await idempotencyService.createIdempotency({
         key: idempotencyKey,
@@ -39,6 +40,9 @@ booking.post(
     }
 
     const booking = await bookingService.createBooking(parsedBooking.data, event.data!.capacity);
+    if (booking.error) {
+      return errorResponse(c, booking.error.message, 400);
+    }
 
     const parsedResponse = bookingResponseSchema.safeParse(booking.data);
     if (!parsedResponse.success) {
