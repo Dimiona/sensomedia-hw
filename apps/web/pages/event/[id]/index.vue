@@ -1,62 +1,11 @@
 <script setup lang="ts">
-import type { TEventResponseSchema } from '@repo/shared/types/event.d';
 import { formatDate } from '~/utility/date';
 
 const router = useRouter();
-const toast = useToast();
-
-const event = ref<TEventResponseSchema | null>(null);
-const isLoading = ref<boolean>(false);
 
 const goBack = () => router.back();
 
-const fetch = async () => {
-  isLoading.value = true;
-
-  try {
-    const response = await useApiService().event.get(router.currentRoute.value.params.id as string);
-    if (!(response instanceof Error)) {
-      event.value = response.payload as TEventResponseSchema;
-    }
-    else {
-      let errorMessage: string = 'Hiba történt az események lekérdezése során.';
-      if (
-        response.message.includes('404')
-        || response.message.includes('not found')
-      ) {
-        errorMessage = 'A kért esemény nem található.';
-      }
-
-      toast.clear();
-      toast.add({
-        title: errorMessage,
-        color: 'error',
-      });
-
-      navigateTo('/');
-    }
-  }
-  catch (e: unknown) {
-    let errorMessage: string = 'Ismeretlen hiba.';
-    if (e instanceof Error) {
-      errorMessage = e.message;
-    }
-    else if (typeof e === 'string') {
-      errorMessage = e;
-    }
-
-    toast.clear();
-    toast.add({
-      title: `Hiba oka: ${errorMessage}`,
-      color: 'error',
-    });
-
-    navigateTo('/');
-  }
-  finally {
-    isLoading.value = false;
-  }
-};
+const { fetch, isLoading, event } = useFetchEvent();
 
 await fetch();
 </script>
