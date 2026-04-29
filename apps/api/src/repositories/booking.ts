@@ -19,14 +19,14 @@ class BookingRepository {
 
     const asArray = await result.toArray();
 
-    return eventCapacity - asArray[0].total;
+    return eventCapacity - (asArray.length > 0 ? asArray[0].total : 0);
   }
 
   async create(booking: TBookingCreateSchema, eventCapacity: number) {
     const session = getClient().startSession();
 
     try {
-      await session.startTransaction();
+      session.startTransaction();
 
       const remainingCapacity = await this.getEventRemainingCapacity(booking.eventId, eventCapacity);
       if (remainingCapacity < booking.quantity) {
