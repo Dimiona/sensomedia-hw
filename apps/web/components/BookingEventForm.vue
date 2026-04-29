@@ -14,6 +14,7 @@ const props = defineProps<{
   disabled: boolean;
 }>();
 
+const formRef = useTemplateRef('form');
 const isSaving = ref<boolean>(false);
 const idempotencyKey = ref<string>(uuidv4());
 
@@ -42,7 +43,9 @@ const onSubmit = async (event: FormSubmitEvent<TBookingCreateSchema>) => {
         color: 'success',
       });
 
-      navigateTo('/');
+      formRef.value?.clear();
+
+      setTimeout(() => navigateTo('/'), 3000);
 
       return;
     }
@@ -76,6 +79,7 @@ const onSubmit = async (event: FormSubmitEvent<TBookingCreateSchema>) => {
 
 <template>
   <UForm
+    ref="form"
     class="flex flex-col gap-5 max-w-1/4 relative"
     :disabled="props.disabled || isSaving"
     :schema="bookingCreateSchema"
