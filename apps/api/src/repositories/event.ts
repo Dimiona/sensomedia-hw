@@ -10,7 +10,7 @@ class EventRepository {
     return this.collection()
       .find<TEventResponseSchema>({})
       .sort({
-        createdAt: -1,
+        date: -1,
       })
       .skip((page - 1) * perpage)
       .limit(perpage)
