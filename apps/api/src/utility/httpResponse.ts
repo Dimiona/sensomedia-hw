@@ -37,7 +37,7 @@ export function invalidSchemaResponse<C extends Context, E extends $ZodError<unk
   return c.json(
     {
       success: false,
-      error: `Invalid ${schemaName} schema: ${z.treeifyError(errors).errors.join('\n')}`
+      error: `Invalid ${schemaName} schema: ${errors.issues.map(issue => issue.message).join('; ')}`
     },
     statusCode
   );
