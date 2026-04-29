@@ -82,17 +82,17 @@ Ez átmásolja a dummy adatokat tartalmazó events.json fájlt a **mongodb** Doc
 <a name="senior"></a>
 # ☝🏻 Senior szinten értékeltek
 
-✅ Idempotens foglalás létrehozás
-✅ MongoDB transaction vagy atomic update használata
-✅ Jól strukturált domain/service réteg
-✅ Közös Zod sémák használata frontend és backend között
-✅ API hibakezelési stratégia
-✅ Design system következetes használata a Nuxt frontendben
-✅ Docker Compose MongoDB-vel
-✅ Seed script
-❌ Alap tesztek
-✅ README indítási útmutatóval
-✅ Rövid technikai döntési dokumentáció
+✅ Idempotens foglalás létrehozás\
+✅ MongoDB transaction vagy atomic update használata\
+✅ Jól strukturált domain/service réteg\
+✅ Közös Zod sémák használata frontend és backend között\
+✅ API hibakezelési stratégia\
+✅ Design system következetes használata a Nuxt frontendben\
+✅ Docker Compose MongoDB-vel\
+✅ Seed script\
+❌ Alap tesztek\
+✅ README indítási útmutatóval\
+✅ Rövid technikai döntési dokumentáció\
 
 <a name="doc"></a>
 # 📝 Leadási dokumentáció
