@@ -52,7 +52,7 @@ const onSubmit = async (event: FormSubmitEvent<TEventCreateSchema>) => {
     if (!(response instanceof Error)) {
       toast.add({
         title: 'Sikeres beküldés',
-        description: 'A foglalásodat rögzítettük.',
+        description: 'Az esemény létrehozásra került.',
         color: 'success',
       });
 
@@ -64,7 +64,7 @@ const onSubmit = async (event: FormSubmitEvent<TEventCreateSchema>) => {
     }
 
     toast.add({
-      title: 'Hiba történt a foglalás beküldése során.',
+      title: 'Hiba történt az esemény létrehozása során.',
       description: response.data?.error,
       color: 'error',
     });
