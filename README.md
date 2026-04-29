@@ -226,6 +226,7 @@ Erre a válasz <a href="#doc--stack-decisions">itt található</a>, a **Frontend
   - APP és API port-ok .env-be szedése
   - APP oldalon implementálni, és használni a `Content Security Policy` -t!
   - API oldalon hasonló, alapvetőbb security beállítások (pl `X-Frame-Options` beállítása)
+  - API oldalon az esemény cím, és leírás maximális hosszának meghatározása/korlátozása
 
 <a name="tech-doc"></a>
 # ⁉️ Rövid technikai döntési dokumentáció
