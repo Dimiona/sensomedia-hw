@@ -1,3 +1,5 @@
+import type { FetchError } from 'ofetch';
+
 export type TCacheKey = string | undefined;
 
 export type FetchMetods = "GET" | "delete" | "get" | "HEAD" | "PATCH" | "POST" | "PUT" | "DELETE" | "CONNECT" | "OPTIONS" | "TRACE" | "head" | "patch" | "post" | "put" | "connect" | "options" | "trace" | undefined
