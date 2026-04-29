@@ -1,7 +1,7 @@
 import type { RuntimeConfig } from "nuxt/schema";
 import type { FetchError } from "ofetch";
-
 import apiEvent from "./api/event";
+import apiBooking from "./api/booking";
 import type { FetchMetods, IAPIRequests, IAPIResponse, TAPIRequest, TCacheKey } from "~/types/api";
 
 export const useApiService = () => {
@@ -67,5 +67,6 @@ export const useApiService = () => {
 
   return {
     event: apiEvent(apiRequests),
+    booking: apiBooking(apiRequests),
   };
 };
