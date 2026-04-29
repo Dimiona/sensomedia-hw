@@ -4,12 +4,7 @@ import type { TEventCreateSchema, TEventResponseSchema } from "../types/event.d.
 
 class EventService {
   async createEvent(data: TEventCreateSchema) {
-    const event = {
-      ...data,
-      createdAt: new Date()
-    };
-
-    return await repositoryResponder(() => eventRepository.create(event));
+    return await repositoryResponder(() => eventRepository.create(data));
   }
 
   async getEvent(id: TEventResponseSchema['_id']) {
