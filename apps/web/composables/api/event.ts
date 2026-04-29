@@ -1,5 +1,5 @@
 import z from "zod";
-import type { TEventCreateSchema, TEventResponseSchema } from "@repo/shared/types/event.d";
+import type { TEventCreateSchema, TEventsResponseSchema } from "@repo/shared/types/event.d";
 import { eventCreateSchema } from "@repo/shared/schemas";
 import { objectIdSchema } from "@repo/shared/schemas/scaffolding";
 import type { IAPIRequests, TCacheKey } from "~/types/api";
@@ -10,7 +10,7 @@ export default ($request: IAPIRequests) => ({
 
   list(page: number = 1, perpage: number = 12) {
     const cacheKey: TCacheKey = `api__${namespace}s__list_${page}_${perpage}`;
-    return $request.get<TEventResponseSchema[]>(cacheKey, `${namespace}s`, { page, perpage });
+    return $request.get<TEventsResponseSchema>(cacheKey, `${namespace}s`, { page, perpage });
   },
 
   get(id: string) {
